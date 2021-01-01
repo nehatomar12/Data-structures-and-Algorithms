@@ -1,19 +1,20 @@
 """
-1. Divide LL in 2 parts
-2. Reverse the 2nd half
-3. check first and second half is equal
-    if LL is odd skip the middle element
+Method:
+    1. Divide LL in 2 parts
+    2. Reverse the 2nd half
+    3. check first and second half is equal
+        if LL is odd skip the middle element
 
 
-splits the tasks
-1. function to get middle of LL
-    - LL is odd or even
-    - pointers to both parts
+    splits the tasks
+    1. function to get middle of LL
+        - LL is odd or even
+        - pointers to both parts
 
-2. compare the LL
-    - recursively compare the LL elements
+    2. compare the LL
+        - recursively compare the LL elements
 
-3. Reverse the LL
+    3. Reverse the LL
 """
 
 class Node:
