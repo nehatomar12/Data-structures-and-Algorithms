@@ -90,6 +90,9 @@ class LL:
             trav = trav.next
         prev.next = trav.next
 
+    def deleteNode(self, curr_node):
+        curr_node.data = curr_node.next.data
+        curr_node.next = curr_node.next.next
 
 
 list_obj = LL()
@@ -100,4 +103,10 @@ for i in l1:
 
 list_obj.listprint(list_obj.head)
 list_obj.removeBefore(4)
+list_obj.listprint(list_obj.head)
+
+
+# Delete without head pointer
+list_obj.listprint(list_obj.head)
+list_obj.deleteNode(list_obj.head.next.next)
 list_obj.listprint(list_obj.head)
