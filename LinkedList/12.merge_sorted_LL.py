@@ -34,6 +34,7 @@ def printList(head):
         print(ptr.data, end=" -> ")
         ptr = ptr.next
     print(None)
+
 def merge_2sorted_linklist(l1, l2):
     # using dummy node
     new_head = None
