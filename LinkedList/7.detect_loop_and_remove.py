@@ -58,7 +58,7 @@ for i in l1:
     list_obj.addLast(i)
 
 # create a loop
-list_obj.head.next.next.next.next.next = list_obj.head.next.next
+list_obj.head.next.next.next.next.next = list_obj.head
 loop_node = list_obj.detect_and_removeLoop()
 list_obj.remove_loop(loop_node)
 loop_node = list_obj.detect_and_removeLoop()
