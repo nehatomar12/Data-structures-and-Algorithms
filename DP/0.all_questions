@@ -1,0 +1,28 @@
+1. Find the number of operations required to reach N starting from 0. You have 2 operations available:
+    def minOperation(self, n):
+        count = 0
+        while n > 0:
+            if n%2 == 0:
+                n /= 2
+            else:
+                n -= 1
+            count += 1
+        return count
+
+2. Max length chain
+    class Pair(object):
+        def __init__(self, a, b):
+            self.a = a
+            self.b = b
+    def maxChainLen(arr, n):
+        arr.sort(key = lambda x: x.a)
+        mcl = [1]*n
+        for i in range(1, n):
+            for j in range(0, i):
+                # consider the diagram view
+                if arr[i].a > arr[j].b and mcl[i] < (mcl[j]+1):
+                    mcl[i] = mcl[j] + 1
+
+        return max(mcl)
+
+3. coin change problem.
