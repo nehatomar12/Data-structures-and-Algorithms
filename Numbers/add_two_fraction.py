@@ -21,6 +21,6 @@ def add_fraction(n1,d1,n2,d2):
     d3 = get_lcm(d1,d2)
     n3 = (n1 * (d3//d1)) + (n2 * (d3//d2))
     gcd_n3_d3 = get_hcf(n3, d3)
-    print(n3//gcd_n3_d3, d3//gcd_n3_d3)
+    print((n3//gcd_n3_d3, d3//gcd_n3_d3))
 
-print(add_fraction(384 ,887 ,778 ,916))
+print((add_fraction(384 ,887 ,778 ,916)))
