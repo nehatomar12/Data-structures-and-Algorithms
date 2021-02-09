@@ -1,7 +1,6 @@
 
 ############ MERGE SORT ##############
 def merge(left, right):
-    print("----> " , left, right)
     result = []
     i,j = 0,0
     while i < len(left) and j < len(right):
@@ -34,4 +33,4 @@ def merge_sort(arr):
 
 if __name__ == "__main__":
     arr = [1, 20, 6, 4, 5]
-    print(merge_sort(arr))
+    print((merge_sort(arr)))

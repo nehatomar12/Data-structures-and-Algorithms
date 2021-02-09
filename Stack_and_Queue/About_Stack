@@ -1,0 +1,26 @@
+Stack is a linear data structure which the order LIFO(Last In First Out) or FILO(First In Last Out)
+for accessing elements. Basic operations of stack are : Push, Pop , Peek
+
+We can use list as a stack in python.
+Stack declaration : :
+    A = [] # declares an empty stack. O(1)
+Push
+    A.append(newElement) # Put the new Element on the end of the array. O(1).
+Pop
+    A.pop()  # removes the last element. O(1)
+isEmpty
+    return (len(A) == 0); # Check if size is 0. O(1)
+Size
+    return len(A); # O(1)
+Top
+    A[-1] # O(1)
+
+Llinked list implemtation of Stack
+push ---> insert_at_last()-------O(n)
+pop ----> remove_at_last() ----- O(n)
+
+but main concern is insertion and delettion is performed by one end
+if we made head ==  Top
+then
+push ---> insert_at_first()-------O(1)
+pop ----> remove_at_first() ----- O(1)

@@ -17,19 +17,17 @@ def is_anagram(s1, s2):
 
 def print_anagrams(arr):
     from collections import defaultdict
-
     group_anagram = defaultdict(list)
-
     for a in arr:
         group_anagram["".join(sorted(a))].append(a)
-
-    print(list(group_anagram.values()))
+    print(group_anagram)
+    print((list(group_anagram.values())))
 
 
 if __name__ == "__main__":
     s1 = "abcd"
     s2 = "adcb"
-    print(is_anagram(s1, s2))
+    print((is_anagram(s1, s2)))
 
     arr =  ["cat", "dog", "tac", "god", "act"]
     # Print all anagram together

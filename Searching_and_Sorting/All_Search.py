@@ -20,4 +20,4 @@ def binary_search(arr, size, element):
 if __name__ == "__main__":
     arr = [1,2,3,4,5,6,7,8,9,10]
     size = len(arr)
-    print(binary_search(arr, size, element=1))
+    print((binary_search(arr, size, element=1)))
