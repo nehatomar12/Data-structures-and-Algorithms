@@ -33,7 +33,7 @@ def simple_approach(arr):
         for j in range(i+1, len(arr)):
             if arr[j] < temp:
                 swaps += 1
-    print("simple_approach:   ", swaps)
+    print(("simple_approach:   ", swaps))
 
 def merge(arr, temp_arr, left, mid, right):
     inversion_count = 0
@@ -71,4 +71,4 @@ if __name__ == "__main__":
     arr = [1, 20, 6, 4, 5]
     simple_approach(arr)
     temp_arr = []
-    print(inversion_with_merge_sort(arr, temp_arr, 0, len(arr)-1))
+    print((inversion_with_merge_sort(arr, temp_arr, 0, len(arr)-1)))

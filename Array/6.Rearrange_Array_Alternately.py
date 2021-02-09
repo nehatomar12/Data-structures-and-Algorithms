@@ -1,8 +1,11 @@
 
 """
-Given a sorted array of positive integers. Your task is to rearrange  the array elements alternatively
+Given a sorted array of positive integers.
+Your task is to rearrange the array elements alternatively
 i.e first element should be max value,
-second should be min value, third should be second max, fourth should be second min and so on..
+    second should be min value,
+    third should be second max,
+    fourth should be second min and so on..
 
 Input:
     6
@@ -19,14 +22,20 @@ def rearrange_extra_space():
     i,j=0,size-1
     temp = []
     flag = True
-    while i <= j:
-        if flag:
-            temp.append(arr[j])
-            j -= 1
-        else:
-            temp.append(arr[i])
-            i += 1
-        flag = not flag
+    while i < j:
+        temp.append(arr[j])
+        temp.append(arr[i])
+        i += 1
+        j -= 1
+        # if flag:
+        #     temp.append(arr[j])
+        #     j -= 1
+        # else:
+        #     temp.append(arr[i])
+        #     i += 1
+        # flag = not flag
+    if i == j:  # Handle the odd case
+        temp.append(arr[i])
     print(temp)
 
 #rearrange_extra_space() # Time and Space complexity O(n) and O(n)
@@ -41,8 +50,9 @@ def rearrange_extra_space():
 #        min_index++
 
 def rearrange_2():
+    print(arr)
     min_ ,max_= 0, size-1
-    max_e = arr[size-1] + 1
+    max_e = arr[size-1] + 1 # can be any number greater then the largest number
     for i in range(size):
         if i%2 == 0:
             arr[i] += (arr[max_] % max_e) * max_e
@@ -50,7 +60,9 @@ def rearrange_2():
         else:
             arr[i] += (arr[min_] % max_e) * max_e
             min_ += 1
+    print(arr)
     for a in arr:
         print(a//max_e,end=" ")
-
+    print()
 rearrange_2()
+#rearrange_extra_space()

@@ -17,6 +17,7 @@ def rearrange(arr, size):
     for i in arr:
         temp = str(i)*max_ele_dig
         new_array.append((temp[:max_ele_dig], i))
+    print(new_array)
     for i in sorted(new_array, reverse=True):
         result += str(i[1])
     print(result)

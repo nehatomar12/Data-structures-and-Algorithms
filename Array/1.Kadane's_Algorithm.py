@@ -23,5 +23,5 @@ for i in range(len(arr)):
     if local_max < 0:
         local_max=0
         s=i+1
-print(arr[start:end+1])
-print(sum(arr[start:end+1]))
+print((arr[start:end+1]))
+print((sum(arr[start:end+1])))

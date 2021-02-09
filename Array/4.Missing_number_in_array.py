@@ -16,4 +16,4 @@ Output:
 
 given_arr = [1,2,3,5]
 original_arr = list(range(given_arr[-1]+1))
-print(list(set(original_arr) ^ set(given_arr))[-1])
+print((list(set(original_arr) ^ set(given_arr))[-1]))

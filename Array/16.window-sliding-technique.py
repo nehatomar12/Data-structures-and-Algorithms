@@ -20,7 +20,7 @@ def brute_force_approach():
             max_sum = temp
             start = i
     print(max_sum)
-    print(arr[start:start+k])
+    print((arr[start:start+k]))
 
 def sliding_window_approach():
     # Time Complexity is O(n)
@@ -36,7 +36,7 @@ def sliding_window_approach():
             window_sum = current_sum
             start = i +1
     print(window_sum)
-    print(arr[start:start+k])
+    print((arr[start:start+k]))
 
 if __name__ == "__main__":
     brute_force_approach()

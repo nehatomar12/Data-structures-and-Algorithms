@@ -28,4 +28,4 @@ for i in range(0, n-2):
         elif s in arr:
             res += 1
 
-print(res if res>0 else -1)
+print((res if res>0 else -1))

@@ -30,5 +30,5 @@ for i in range(len(arr)):
         end = i
         break
 
-print(arr[start:end+1])
+print((arr[start:end+1]))
 print(local_max)

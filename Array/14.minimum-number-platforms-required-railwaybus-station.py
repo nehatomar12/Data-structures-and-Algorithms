@@ -11,8 +11,6 @@ Explantion: There are at-most three trains at a time (time between 11:00 to 11:2
 
 """
 
-
-
 def approach_1(arrive, depart):
     result = 1
     for i in range(len(arrive)):
@@ -28,29 +26,59 @@ def approach_1(arrive, depart):
     print(result)
 
 
-def approach_2(arrive, depart):
-    arrive.sort()
-    depart.sort()
-    # comapre like merge sort
-    i , j= 0, 1
-    need_platform = 1
-    result = 1
-    while i < len(arrive) and j < len(arrive):
-        # cond1: arrive = [950, 940] depart = [1130, 1120]
-        if arrive[j] <= depart[i]:
-            # Train still at platform. need more platform
-            need_platform += 1
-            j += 1
-        # cond2: arrive = [940, 1020] depart = [950, 1120]
-        elif arrive[j] >= depart[i]:
-            # Train left before arrival of next train platform is empty
-            need_platform -= 1
-            i += 1
-        result = max(result, need_platform)
-    print(result)
+def approach_2(arrl, exit):
+    arrl.sort()
+    exit.sort()
+
+    guests_in = 1
+    max_guests = 1
+    time = arrl[0]
+    i = 1
+    j = 0
+    n = len(arrl)
+
+    while (i < n and j < n):
+        if (arrl[i] <= exit[j]):
+            guests_in = guests_in + 1
+            if(guests_in > max_guests):
+                max_guests = guests_in
+                time = arrl[i]
+            i = i + 1
+        else:
+            guests_in = guests_in - 1
+            j = j + 1
+
+    print("Maximum Number of Guests =",
+          max_guests, "at time", time)
+
+
+
     # Time complexity O(nlogn)
 
 if __name__ == "__main__":
     arrive = [900, 940, 950, 1100, 1500, 1800]
     depart = [910, 1120, 1130, 1200, 1900, 2000]
-    approach_1(arrive, depart)
+    arrl = [1, 2, 10, 5, 5]
+    exit = [4, 5, 12, 9, 12]
+    approach_2(arrl,exit)
+    approach_1(arrl,exit)
+
+
+"""
+# while i < len(arrive) and j < len(arrive):
+    #     # cond1: arrive = [950, 940] depart = [1130, 1120]
+    #     if arrive[j] <= depart[i]:
+    #         # Train still at platform. need more platform
+    #         need_platform += 1
+    #         j += 1
+    #     # cond2: arrive = [940, 1020] depart = [950, 1120]
+    #     #elif arrive[j] >= depart[i]:
+    #     else:
+    #         # Train left before arrival of next train platform is empty
+    #         need_platform -= 1
+    #         i += 1
+    #     result = max(result, need_platform)
+    #     print(result, r)
+
+
+"""

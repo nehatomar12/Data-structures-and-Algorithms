@@ -1,10 +1,14 @@
-
+"""
+Given two arrays X and Y of positive integers, find the number of pairs
+such that x^y > y^x (raised to power of) where x is an element from X and y is an element from Y.
+"""
 from itertools import product
 
 M = 3
 N = 2
-X = [2, 1, 6]
-Y = [1, 5]
+X = [2, 1, 6, 3]
+Y = [1, 5, 3]
+
 
 def simple_approach():
     count = 0
@@ -19,13 +23,19 @@ def get_index(arr, size, element):
     low, high = 0, size-1
     ans = -1
     while low <= high:
-        mid = (low + high)/2
+        mid = (low + high)//2
+        #### simple
+        if arr[mid] == element:
+            ans = mid
+            return ans
+        ###
         if arr[mid] > element:
-            ans= mid
-            high=mid-1
+            #ans = mid
+            high = mid-1
         else:
             low = mid + 1
     return ans
+
 
 def optimize_approach():
     """
@@ -47,7 +57,6 @@ def optimize_approach():
     X.sort()
     Y.sort()
 
-
     for i in range(len(Y)):
         if Y[i] == 0:
             zeros += 1
@@ -65,14 +74,6 @@ def optimize_approach():
             continue
         elif X[j] == 1:
             answer += zeros
-
-        elif X[j] == 2:
-            index = get_index(Y, N, element=2)
-            if index != -1:
-                answer += (N-index)
-            answer -= threes
-            answer -= fours
-            answer += (ones + zeros)
         else:
             index = get_index(Y, N, element=X[j])
             if index != -1:
@@ -80,7 +81,12 @@ def optimize_approach():
             answer += (ones + zeros)
             if X[j] == 3:
                 answer += twos
+            elif X[j] == 2:
+                answer -= threes
+                answer -= fours
+
     return answer
 
 
-print(optimize_approach())
+simple_approach()
+print((optimize_approach()))

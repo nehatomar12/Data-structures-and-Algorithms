@@ -15,4 +15,4 @@ for i in range(0, len(arr), k):
     sub_arr = arr[i:i+k]
     result += " ".join(map(str, sub_arr[::-1]))
     result += " "
-print(result.strip())
+print((result.strip()))

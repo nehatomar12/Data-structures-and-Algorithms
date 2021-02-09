@@ -8,4 +8,4 @@ Output:
 """
 arr = [1,2,3,4,5]
 N = 2
-print(" ".join(map(str, arr[N:]+arr[:N])))
+print((" ".join(map(str, arr[N:]+arr[:N]))))
