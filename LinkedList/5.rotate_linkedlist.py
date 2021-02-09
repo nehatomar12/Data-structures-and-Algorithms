@@ -49,5 +49,5 @@ for i in l1:
     list_obj.addLast(i)
 
 list_obj.listprint()
-list_obj.rotate_linklist(k=9)
+list_obj.rotate_linklist(k=3)
 list_obj.listprint()
