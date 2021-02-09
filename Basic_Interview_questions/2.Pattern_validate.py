@@ -12,13 +12,13 @@ def validate(s):
         if s[i] != "a":
             break
     if i*2 != len(s):
-        print("{}: No".format(s))
+        print(("{}: No".format(s)))
         return
     for j in range(i, len(s)):
         if s[j] != "b":
-            print("{}: No".format(s))
+            print(("{}: No".format(s)))
             return
-    print("{}: Yes".format(s))
+    print(("{}: Yes".format(s)))
 
 
 

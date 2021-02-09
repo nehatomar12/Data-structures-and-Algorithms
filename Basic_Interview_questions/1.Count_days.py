@@ -13,7 +13,7 @@ def use_buitin_function(date1, date2):
     dt1 = date(date1.year, date1.month, date1.day)
     dt2 = date(date2.year, date2.month, date2.day)
     delta = dt1 - dt2
-    print(abs(delta.days))
+    print((abs(delta.days)))
 
 
 def without_buitin_function(date1, date2):
@@ -36,21 +36,17 @@ def without_buitin_function(date1, date2):
             date.year -= 1
         return int(date.year/4 -date.year/100 + date.year/400)
 
-    days1 = date1.year * 365 + date1.day
-    # count for leap year
-    days1 += _get_leap_year(date1)
-    # Add previous month days
-    for i in range(0, date1.month-1):
-        days1 += months[i]
+    def get_days(_date):
+        days = _date.year*365 + _date.day
+        days += _get_leap_year(_date)
+        for d in range(0, _date.month-1):
+            days += months[d]
+        return days
 
-    days2 = date2.year * 365 + date2.day
-    # count for leap year
-    days2 += _get_leap_year(date2)
-    # Add previous month days
-    for i in range(0, date2.month-1):
-        days2 += months[i]
+    days1 = get_days(date1)
+    days2 = get_days(date2)
 
-    print("Total days: ", abs(days2-days1))
+    print(("Total days: ", abs(days2-days1)))
     return (days2-days1)
 
 
