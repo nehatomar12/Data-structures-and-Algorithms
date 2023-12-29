@@ -1,0 +1,24 @@
+class Solution:
+    def cleanRoom(self, robot):
+        self.dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]  # Directions: Up, Right, Down, Left
+        self.dfs(robot, 0, 0, 0, set())
+
+    def dfs(self, robot, i, j, d, seen):
+        robot.clean()
+        seen.add((i, j))
+
+        for k in range(4):
+            new_d = (d + k) % 4
+            x, y = i + self.dirs[new_d][0], j + self.dirs[new_d][1]
+
+            if (x, y) not in seen and robot.move():
+                self.dfs(robot, x, y, new_d, seen)
+                # Go back to the previous cell.
+                robot.turnRight()
+                robot.turnRight()
+                robot.move()
+                # Go back to the original direction.
+                robot.turnRight()
+                robot.turnRight()
+
+            robot.turnRight()  # Always turn the robot clockwise.
